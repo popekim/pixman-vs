@@ -76,7 +76,8 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\pixman;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -102,7 +103,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_CONFIG_H;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\pixman;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -126,9 +128,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\pixman\pixman-access-accessors.c" />
     <ClCompile Include="..\..\pixman\pixman-access.c" />
@@ -162,12 +161,14 @@
     <ClCompile Include="..\..\pixman\pixman.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\pixman\config.h" />
     <ClInclude Include="..\..\pixman\pixman-accessor.h" />
     <ClInclude Include="..\..\pixman\pixman-combine32.h" />
     <ClInclude Include="..\..\pixman\pixman-compiler.h" />
     <ClInclude Include="..\..\pixman\pixman-edge-imp.h" />
     <ClInclude Include="..\..\pixman\pixman-inlines.h" />
     <ClInclude Include="..\..\pixman\pixman-private.h" />
+    <ClInclude Include="..\..\pixman\pixman-version.h" />
     <ClInclude Include="..\..\pixman\pixman.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
